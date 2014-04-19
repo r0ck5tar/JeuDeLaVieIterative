@@ -37,8 +37,8 @@ public class Cell {
             alive = willLive;
             listener.cellChanged(new CellChangedEvent(this));
 
-            System.out.print("Cell [" + xCoordinate + ", " + yCoordinate +"] is now ");
-            if(alive) System.out.println("alive"); else System.out.println("dead");
+            //System.out.print("Cell [" + xCoordinate + ", " + yCoordinate +"] is now ");
+            //if(alive) System.out.println("alive"); else System.out.println("dead");
         }
     }
 

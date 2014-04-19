@@ -14,11 +14,27 @@ public class GameOfLife{
     public static void main(String argv[])
             throws InitializingPatternOutOfBoundsException {
         System.setProperty("java.util.Arrays.useLegacyMergeSort", "true");
-        GameOfLife life = new GameOfLife(20, 20);
-        byte bpattern[][] = {{1, 1, 0, 0},
-                             {1, 1, 0, 0},
-                             {0, 0, 1, 1},
-                             {0, 0, 1, 1}};
+        GameOfLife life = new GameOfLife(45, 45);
+        byte bpattern[][] = {
+                {0,0,0,0,0,0,1,1,0,0,0,0,1,0,1,0,0,0,0},
+                {0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,1,1,0,0},
+                {0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0},
+                {0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,1},
+                {1,1,0,1,0,0,0,0,1,0,0,0,0,0,0,1,0,1,0},
+                {1,1,0,1,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0},
+                {0,0,0,1,0,1,1,0,1,0,1,1,0,0,0,0,0,1,0},
+                {0,0,0,1,0,0,0,0,1,0,1,1,0,0,0,0,1,0,0},
+                {0,0,0,0,1,1,1,1,0,0,0,0,1,0,1,0,0,0,0},
+                {0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0},
+                {0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                {0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0,1,0,1,1,0,1,0,0,0,0,0},
+                {1,0,1,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0},
+                {0,1,0,0,0,0,0,0,1,0,1,1,0,1,0,0,0,0,0},
+                {0,1,1,0,0,0,0,0,0,1,0,0,1,0,0,0,1,1,0},
+                {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0},
+                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}};
         life.grid.initializeWithPattern(new Pattern(bpattern));
         life.run();
     }
@@ -54,16 +70,17 @@ public class GameOfLife{
             }
 
             try {
-                Thread.sleep(500);
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
+            /*
             try {
                 System.in.read();
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            */
 
             for(int x = 0; x < grid.getWidth(); x ++) {
                 for (int y = 0; y < grid.getHeight(); y++) {
