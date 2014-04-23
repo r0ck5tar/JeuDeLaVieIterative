@@ -22,7 +22,11 @@ public class Grid {
     }
 
     public void initializeWithPattern(Pattern pattern)
-            throws InitializingPatternOutOfBoundsException { initializeWithPattern(pattern, 3, 3);}
+            throws InitializingPatternOutOfBoundsException {
+        int xOffset = (width - pattern.getDimension())/2;
+        int yOffset = (height - pattern.getDimension())/2;
+        initializeWithPattern(pattern, xOffset, yOffset);
+    }
 
     public void initializeWithPattern(Pattern pattern, int xOffset, int yOffset)
             throws InitializingPatternOutOfBoundsException{
